@@ -26,11 +26,14 @@ html{
 }
 
 .input{
-    color: white;
-    position: fixed;
-    
+    color: white;    
     text-align: center;
     align-items: center;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 #display_image{
@@ -38,11 +41,14 @@ html{
     justify-content: center;
     width: 375px;
     height: 211px;
-    border: 1px solid white;
     background-position: center;
     position: absolute;
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+}
+
+input[type = file]{
+
 }

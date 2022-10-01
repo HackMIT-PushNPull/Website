@@ -1,14 +1,9 @@
-function readURL(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            $('#blah')
-                .attr('src', e.target.result)
-                .width(150)
-                .height(200);
-        };
-
-        reader.readAsDataURL(input.files[0]);
-    }
-}
+const image_input = document.querySelector("#image-input");
+image_input.addEventListener("change", function() {
+  const reader = new FileReader();
+  reader.addEventListener("load", () => {
+    const uploaded_image = reader.result;
+    document.querySelector("#display-image").style.backgroundImage = `url(${uploaded_image})`;
+  });
+  reader.readAsDataURL(this.files[0]);
+});
