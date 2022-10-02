@@ -1,24 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+    <!-- For the Font -->
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+<!-- Needed -->
+<link rel="shortcut icon" type="image/x-icon" href="images/icon.ico">
+<link rel="stylesheet" href="/Users/james/Downloads/ionicons-2.0.1/css">
+<!-- Needed -->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website</title>
+    <title>Your Note Taker</title>
     <link rel="stylesheet" href="home.css">
 </head>
 <body>
     <section class="sec1" id="section1">
-        <h1 class="title">Notetaker</h1>
-        <input class="input" type="file"  accept="image/*" name="image" id="imgfile"  onchange="loadFile(event)">
+        <h1 class="title">Your Note Taker</h1>
 
-        <p id="display_image"><img id="output" width="375px" height="211px"/></p>
+        <input class="input" accept="image/*, video/*" type="file" value="Button" name="image" id="imgfile"  onchange="loadFile(event)" hidden onclick="formSuc()"/>
+
+        <label class="label" for="imgfile"><p class="upload">Upload File</p></label>
         
-        <script>
-        var loadFile = function(event) {
-            var image = document.getElementById('output');
-            image.src = URL.createObjectURL(event.target.files[0]);
-        };
+        <input type="file" id="actual-btn" hidden/>
+        
+
+        <h6 id="original">[Uploaded Image]</h2>
+        <p id="display_image"><img id="output"/></p>
+        <a class="a3">
+            <div class="scroll-down" data-aos="zoom-in" data-aos-offset="110"></div>
+          </a>
+        <!-- <h4 class="result">Click to view the Result!</h4> -->
+        
+        <!-- <button class="openB" id="open">Download Document</button> -->
+        <button class="openB" id="open">View Result</button>
+
+        <!-- <a class="download" href="Hello.docx" download>Download Document</a> -->
+
+        <div class="modal-container" id="modal_container">
+            <div class="modal">
+                <h1 class="text">Result</h1>
+                <p class="text2">Text</p>
+                <br><br>
+                <button class="close" id="close">Close</button>
+            </div>
+        </div>
+    </section>
+        
+        <script src="script.js">
         </script>
+        <script src="script2.js">
+        </script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init({
+            offset: 200,
+            duration: 1500,
+          });
+        </script>
+        <input type="button" id='script' name="scriptbutton" value=" Run Script " onclick="goPython()">
+        <label class="label2" for="script"><p class="upload">Test</p></label
+
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+        <script>
+        function goPython(){
+            <py-script>
+                print("you clicked me")
+            </py-script>
+        }
+    </script>
 </body>
 </html>
